@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.navigationarchitecture19.R
 import kotlinx.android.synthetic.main.item_linear.view.*
 
-class RvAdapter  : RecyclerView.Adapter<RvAdapter.RVviewHolder>(){
+class RvAdapter ( private val listener : IntFaceClickRecycler) : RecyclerView.Adapter<RvAdapter.RVviewHolder>(){
     private val list = arrayListOf<String>()
 
 
@@ -33,12 +33,18 @@ class RvAdapter  : RecyclerView.Adapter<RvAdapter.RVviewHolder>(){
     override fun getItemCount()  = list.size
 
     override fun onBindViewHolder(holder: RVviewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(list[position], listener)
     }
 
     class  RVviewHolder (v : View) : RecyclerView.ViewHolder (v) {
-        fun bind(data : String){
+        fun bind(
+            data: String,
+            listener: IntFaceClickRecycler
+        ){
             itemView.Tv.text = data
+            itemView.setOnClickListener {
+                listener.gotoTheDetails(data)
+            }
         }
     }
 }

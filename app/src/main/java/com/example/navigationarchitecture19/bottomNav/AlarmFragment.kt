@@ -2,11 +2,12 @@ package com.example.navigationarchitecture19.bottomNav
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.example.navigationarchitecture19.R
 import com.example.navigationarchitecture19.base.BaseFragment
 import kotlinx.android.synthetic.main.alarm_fragment.*
 
-class AlarmFragment : BaseFragment() {
+class AlarmFragment : BaseFragment(), IntFaceClickRecycler {
     override fun resID() = R.layout.alarm_fragment
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -15,7 +16,7 @@ class AlarmFragment : BaseFragment() {
     }
 
     private fun listArr() {
-        val adapter = RvAdapter()
+        val adapter = RvAdapter(this)
         recyclerview.adapter = adapter
         adapter.addlist("New Yourk")
         adapter.addlist("Vancuover")
@@ -23,6 +24,11 @@ class AlarmFragment : BaseFragment() {
         adapter.addlist("Hamburg")
         adapter.addlist("Oslo")
         adapter.addlist("Cabo-werde")
+
+    }
+
+    override fun gotoTheDetails(data: String) {
+        findNavController().navigate(R.id.action_alarmFragment_to_citysFragment)
 
     }
 

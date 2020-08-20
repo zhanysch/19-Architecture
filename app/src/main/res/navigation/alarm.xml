@@ -9,5 +9,18 @@
         android:id="@+id/alarmFragment"
         tools:layout="@layout/alarm_fragment"
         android:name="com.example.navigationarchitecture19.bottomNav.AlarmFragment"
-        android:label="AlarmFragment" />
+        android:label="AlarmFragment" >
+        <action
+            android:id="@+id/action_alarmFragment_to_citysFragment"
+            app:destination="@id/citysFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/citysFragment"
+        tools:layout="@layout/cityalarm_fraggment"
+        android:name="com.example.navigationarchitecture19.bottomNav.citysAlarm.CitysFragment"
+        android:label="CitysFragment" />
 </navigation>
