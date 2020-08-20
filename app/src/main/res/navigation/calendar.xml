@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calendar"
+    app:startDestination="@id/calendarFragment">
+
+    <fragment
+        android:id="@+id/calendarFragment"
+        tools:layout="@layout/calendar_fragment"
+        android:name="com.example.navigationarchitecture19.bottomNav.CalendarFragment"
+        android:label="CalendarFragment" >
+        <action
+            android:id="@+id/action_calendarFragment_to_fragment_CalendarFirst"
+            app:destination="@id/fragment_CalendarFirst"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+        <action
+            android:id="@+id/action_calendarFragment_to_fragment_CalendarSecond"
+            app:destination="@id/fragment_CalendarSecond" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_CalendarFirst"
+        tools:layout="@layout/firstcalendar_fragment"
+        android:name="com.example.navigationarchitecture19.bottomNav.FragmCalendars.Fragment_CalendarFirst"
+        android:label="Fragment_CalendarFirst" />
+    <fragment
+        android:id="@+id/fragment_CalendarSecond"
+        tools:layout="@layout/secondcalendarfragment"
+        android:name="com.example.navigationarchitecture19.bottomNav.FragmCalendars.Fragment_CalendarSecond"
+        android:label="Fragment_CalendarSecond" />
+</navigation>

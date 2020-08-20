@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/account"
+        android:src="@drawable/image_1"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/Pd"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  личная информация"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/account"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Иванов Иван Иванович  год рождения 01.01.1990 "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Pd"/>
+
+    <TextView
+        android:id="@+id/education"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Образование : Пту имени 70-летия Октября. должность Слесарь "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name"/>
+
+    <TextView
+        android:id="@+id/education"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Образование : Пту имени 70-летия Октября. должность Слесарь "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name"/>
+
+    <TextView
+        android:id="@+id/expirience"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Опыт: Старший мастер электрослесарей 5 разряда  , Traine-Developer Kotlin "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/education"/>
+
+    <TextView
+        android:id="@+id/skills"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" ключевые навыки: Английский B2, Немецкий С2 , умею делать медитацию  и йгоу"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expirience"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
