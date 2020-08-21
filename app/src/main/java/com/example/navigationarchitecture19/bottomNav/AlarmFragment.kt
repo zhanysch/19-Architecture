@@ -18,19 +18,17 @@ class AlarmFragment : BaseFragment(), IntFaceClickRecycler {
     private fun listArr() {
         val adapter = RvAdapter(this)
         recyclerview.adapter = adapter
-        adapter.addlist("New Yourk")
-        adapter.addlist("Vancuover")
-        adapter.addlist("Berlin")
-        adapter.addlist("Hamburg")
-        adapter.addlist("Oslo")
-        adapter.addlist("Cabo-werde")
-
+        adapter.addlist(Dataclass("New York ", R.drawable.newyourk, getString(R.string.city)))
+        adapter.addlist(Dataclass("Vancouver",R.drawable.vancouver , getString(R.string.city2)))
+        adapter.addlist(Dataclass("Berlin", R.drawable.berlin,getString(R.string.city3)))
+        adapter.addlist(Dataclass("Hanover",R.drawable.hanover,getString(R.string.cityFour)))
+        adapter.addlist(Dataclass("Oslo",R.drawable.oslo, getString(R.string.cityfive)))
+        adapter.addlist(Dataclass("Cabo-Werde" ,R.drawable.cabowerde, getString(R.string.city7) ))
     }
 
-    override fun gotoTheDetails(data: String) {
-        findNavController().navigate(R.id.action_alarmFragment_to_citysFragment)
+    override fun gotoTheDetails(data: Dataclass) {
 
+        val dest = AlarmFragmentDirections.actionAlarmFragmentToCitysFragment(data)
+        findNavController().navigate(dest)
     }
-
-
 }

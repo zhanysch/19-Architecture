@@ -1,14 +1,17 @@
 package com.example.navigationarchitecture19.bottomNav
 
+import android.graphics.drawable.AnimatedImageDrawable
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.navigationarchitecture19.R
+import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.item_linear.view.*
 
 class RvAdapter ( private val listener : IntFaceClickRecycler) : RecyclerView.Adapter<RvAdapter.RVviewHolder>(){
-    private val list = arrayListOf<String>()
+    private val data = arrayListOf<Dataclass>()
 
 
 
@@ -18,33 +21,39 @@ class RvAdapter ( private val listener : IntFaceClickRecycler) : RecyclerView.Ad
 
     }
 
-    fun addlist(item: String){
-       list.add(item)
+    fun addlist(item: Dataclass){
+       data.add(item)
         notifyItemInserted(1)
     }
 
-    fun update(data: ArrayList<String>){
-        list.clear()
-        list.addAll(data)
+    fun update(data:  ArrayList<Dataclass>){
+        data.clear()
+        data.addAll(data)
         notifyDataSetChanged()
     }
 
 
-    override fun getItemCount()  = list.size
+    override fun getItemCount()  = data.size
 
     override fun onBindViewHolder(holder: RVviewHolder, position: Int) {
-        holder.bind(list[position], listener)
+        holder.bind(data[position], listener)
     }
 
     class  RVviewHolder (v : View) : RecyclerView.ViewHolder (v) {
-        fun bind(
-            data: String,
-            listener: IntFaceClickRecycler
-        ){
-            itemView.Tv.text = data
+        fun bind(data: Dataclass, listener: IntFaceClickRecycler) {
             itemView.setOnClickListener {
-                listener.gotoTheDetails(data)
+                listener.gotoTheDetails(data)  // <- supposed to be only data not data.tCity questio
             }
+            itemView.Tv.text = data.tCity
+            itemView.Image.setBackgroundResource(data.image)
+
         }
     }
 }
+@Parcelize
+data class Dataclass(
+    val tCity : String,
+    val image : Int,
+    val description : String
+
+) : Parcelable

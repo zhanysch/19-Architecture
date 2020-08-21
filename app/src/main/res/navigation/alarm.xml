@@ -22,5 +22,11 @@
         android:id="@+id/citysFragment"
         tools:layout="@layout/cityalarm_fraggment"
         android:name="com.example.navigationarchitecture19.bottomNav.citysAlarm.CitysFragment"
-        android:label="CitysFragment" />
+        android:label="CitysFragment" >
+        <argument
+            android:name="details"
+            app:argType="com.example.navigationarchitecture19.bottomNav.Dataclass"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>
